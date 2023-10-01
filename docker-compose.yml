@@ -1,0 +1,29 @@
+version: '3'
+services:
+  bookapi:
+    restart: on-failure
+    container_name: book-api
+    build:
+      context: .
+      args:
+        NODE_ENV: development
+    command: npm run dev
+    ports:
+      - "83:3000"
+    networks:
+      - test-app-tools
+     
+    volumes:
+      - .:/app
+    environment:
+      - NODE_ENV=development 
+   
+
+networks:
+  test-app-tools:
+    driver: bridge
+    external: true
+  
+   
+   
+      
