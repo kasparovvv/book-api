@@ -1,8 +1,8 @@
 const express = require('express')
 
-const {getAll,create,bookById} = require('../controllers/book')
+const {getAll,create,bookById} = require('../controllers/bookController')
 
-const authenticateJWT = require('../middlewares/auth.js')
+const authenticateJWT = require('../middlewares/auth.middleware')
 
 const router = express.Router()
 
