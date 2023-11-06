@@ -1,6 +1,7 @@
 
 const { StatusCode } = require('status-code-enum')
 const BookService = require('../Services/BookService');
+const { log } = require('console');
 
 
 
@@ -24,11 +25,12 @@ const create = async function (req, res) {
 
   try {
  
-    const book = await BookService.create()
+    const book = await BookService.create(req.body)
     
     res.status(StatusCode.SuccessCreated).json({ data: book })
     
  } catch (error) {
+    
     console.log(error);
     res.status(StatusCode.ServerErrorInternal)
  }

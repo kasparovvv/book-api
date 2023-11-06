@@ -1,13 +1,12 @@
 
 const Book = require('../models/book.js')
-var Fakerator = require("fakerator");
+
 
 const getAll = async function () {
 
     try {
    
        return await Book.find()
-     
        
     } catch (error) {
        console.log(err);
@@ -18,25 +17,25 @@ const getAll = async function () {
      
    }
    
-const create = async function () {
-
+const create = async function (data) {
 
     try {
 
-    var fakerator = Fakerator();
+    const {name,price,quantity} = data
 
-    var randomBook = new Book(
+    var newBook = new Book(
         { 
-            name: fakerator.names.name(), 
-            price: fakerator.random.number(100), 
-            quantity: fakerator.random.number(100) 
+            name: name, 
+            price: price, 
+            quantity:quantity 
         }
     );
 
-    return  await randomBook.save()
+    return  await newBook.save()
     
     
 } catch (error) {
+    
     console.log(err);
     throw error
     
@@ -49,8 +48,7 @@ const bookById = async (id) => {
     
     try {
     
-    
-    return await Book.findById(id);
+        return await Book.findById(id);
 
     } catch (error) {
     
