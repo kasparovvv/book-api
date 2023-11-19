@@ -1,6 +1,6 @@
 const { validationResult } = require('express-validator')
 const { StatusCode } = require('status-code-enum')
-const JSONAPIResponse = require('../helpers/jsonResponse.js')
+const JSONAPIResponse = require('../utilities/jsonResponse.js')
 
 
 

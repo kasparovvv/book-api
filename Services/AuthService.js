@@ -36,8 +36,6 @@ const register = async function (data) {
 
 
     } catch (err) {
-
-        console.log(err);
         throw err
     }
 
@@ -86,8 +84,6 @@ const login = async function (data) {
 
 
     } catch (err) {
-
-        console.log(err);
         throw err
     }
 

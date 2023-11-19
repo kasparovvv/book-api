@@ -10,7 +10,7 @@ const getAll = async function () {
 
     } catch (err) {
 
-        console.log(err);
+       
         throw err
     }
 
@@ -36,8 +36,6 @@ const create = async function (data) {
 
 
     } catch (err) {
-
-        console.log(err);
         throw err
 
     }
@@ -52,8 +50,6 @@ const bookById = async (id) => {
         return await Book.findById(id);
 
     } catch (err) {
-
-        console.log(err);
         throw err
     }
 };

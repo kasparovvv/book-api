@@ -1,0 +1,26 @@
+{"level":"error","message":"res","service":"user-service"}
+{"level":"error","message":"res","service":"book-api"}
+{"level":"error","message":"email is not defined","service":"book-api"}
+{"level":"error","message":"email is not defined","service":"book-api"}
+{"level":"error","message":"email is not defined","service":"book-api"}
+{"level":"error","message":"Cannot destructure property 'email' of 'data' as it is undefined.","service":"book-api"}
+{"level":"error","message":"Cannot destructure property 'email' of 'data' as it is undefined.","service":"book-api"}
+{
+  level: 'error',
+  message: "Cannot destructure property 'email' of 'data' as it is undefined.",
+  service: 'book-api',
+  label: 'right meow!',
+  timestamp: '2023-11-19T18:35:40.456Z'
+}
+{
+  level: 'error',
+  message: "Cannot destructure property 'email' of 'data' as it is undefined.",
+  service: 'book-api',
+  timestamp: '2023-11-19T18:36:07.588Z'
+}
+{
+  level: 'error',
+  message: "Cannot destructure property 'email' of 'data' as it is undefined.",
+  service: 'book-api',
+  timestamp: '2023-11-19T18:40:02.349Z'
+}

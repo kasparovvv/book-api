@@ -3,15 +3,17 @@ const cors = require('cors')
 const dotenv = require('dotenv')
 const router = require('./routes')
 
-// TODO  - winston for logging
+
 // TODO  - swagger documentation
 // TODO  - Migration
+// TODO  - Belki Redis
 
 dotenv.config()
 
 const db = require('./config/database')
 
 db()
+
 
 const app = express()
 

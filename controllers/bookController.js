@@ -1,9 +1,8 @@
 
 const { StatusCode } = require('status-code-enum')
 const BookService = require('../Services/BookService');
-const JSONAPIResponse = require('../helpers/jsonResponse.js')
-
-const { log } = require('console');
+const JSONAPIResponse = require('../utilities/jsonResponse.js')
+const logger = require('../utilities/logger.js')
 
 
 
@@ -17,10 +16,11 @@ const getAll = async function (req, res) {
 
   } catch (err) {
 
-    //  TODO LOG
-
-    if (err)
+    if (err) {
+      logger.log("error", err.message)
       return JSONAPIResponse.error(res, err.message)
+    }
+
 
 
   }
@@ -35,13 +35,16 @@ const create = async function (req, res) {
 
     const book = await BookService.create(req.body)
 
-    return JSONAPIResponse.success(res, book,StatusCode.SuccessCreated)
+    return JSONAPIResponse.success(res, book, StatusCode.SuccessCreated)
 
 
   } catch (err) {
-      //  TODO LOG
-    if (err)
+
+    if (err) {
+      logger.log("error", err.message)
       return JSONAPIResponse.error(res, err.message)
+    }
+
   }
 
 
@@ -53,19 +56,23 @@ const bookById = async (req, res) => {
 
     const book = await BookService.bookById(req.params.id)
 
-    if (!book) 
-      return JSONAPIResponse.success(res,[],StatusCode.ClientErrorNotFound,false)
+    if (!book)
+      return JSONAPIResponse.success(res, [], StatusCode.ClientErrorNotFound, false)
 
     return JSONAPIResponse.success(res, book)
 
 
   } catch (err) {
 
-    //  TODO LOG
-    if (err)
+
+    if (err) {
+      logger.log("error", err.message)
       return JSONAPIResponse.error(res, err.message)
-  
     }
+
+
+
+  }
 
 };
 
