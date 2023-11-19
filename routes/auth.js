@@ -11,6 +11,8 @@ const { validate } = require('../middlewares/validation.middleware')
 const router = express.Router()
 
 
+
+
 router.post('/register',registerValidationRules(),validate,register)
 router.post('/login',loginValidationRules(), validate,login)
 

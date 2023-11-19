@@ -24,3 +24,15 @@
   service: 'book-api',
   timestamp: '2023-11-19T18:40:02.349Z'
 }
+{
+  level: 'error',
+  message: "Cannot destructure property 'email' of 'data' as it is undefined.",
+  service: 'book-api',
+  timestamp: '2023-11-19T18:41:43.752Z'
+}
+{
+  level: 'error',
+  message: "Cannot destructure property 'email' of 'data' as it is undefined.",
+  service: 'book-api',
+  timestamp: '2023-11-19T19:18:31.412Z'
+}

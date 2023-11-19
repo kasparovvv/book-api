@@ -30,7 +30,7 @@ const login = async (req, res) => {
 
     try {
 
-        const user = await AuthService.login(req.bodys)
+        const user = await AuthService.login(req.body)
 
         return JSONAPIResponse.success(res, user.data, user.statusCode, user.success)
 

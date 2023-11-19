@@ -3,10 +3,14 @@ const cors = require('cors')
 const dotenv = require('dotenv')
 const router = require('./routes')
 
+const swaggerUi = require('swagger-ui-express');
 
-// TODO  - swagger documentation
+
+
+// TODO  - Swagger auth ve içleri doldurulacak
 // TODO  - Migration
 // TODO  - Belki Redis
+// TODO  Unit test
 
 dotenv.config()
 
@@ -16,6 +20,12 @@ db()
 
 
 const app = express()
+
+
+const swaggerDocument = require('./swagger_output.json');
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 
 app.use(cors())
 app.use(express.json())
