@@ -5,9 +5,10 @@ const mongoURL = `mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASSWO
 
 const db = () =>{
     mongoose.connect(mongoURL,{ useNewUrlParser: true, useUnifiedTopology: true }).then(() =>{
-        console.log("connected");
+        console.log("DB Connected!");
     }).catch((err) => {
         console.log(err);
+        throw err
     })
 }
 

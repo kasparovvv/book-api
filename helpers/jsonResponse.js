@@ -5,12 +5,12 @@ const { StatusCode } = require('status-code-enum')
 // jsonApiResponse.js
 class JSONAPIResponse {
 
-    static success(res, data, sCode = StatusCode.SuccessOK) {
+    static success(res, data, sCode = StatusCode.SuccessOK,success = true) {
 
 
         let response = {
-            success: true,
-            data: data,
+            success,
+            data,
         }
 
         res.status(sCode).json(response);
@@ -23,7 +23,7 @@ class JSONAPIResponse {
             let response = {
                 success: false,
                 error: {
-                    message: message,
+                    message: message || "Internal Server Error!",
                 }
             }
 
